@@ -1,0 +1,348 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  COLOR PALETTE  */
+:root {
+  --dark: #0f2f24;
+  --green: #1f5c45;
+  --sage: #8fb3a2;
+  --cream: #f4f4f2;
+  --gold: #c2a76b;
+}
+
+/* BASE*/
+html, body {
+  height: 100%;
+}
+html{
+  scroll-behavior:smooth;
+  }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'Poppins', sans-serif;
+  animation: fadePage 0.8s ease forwards;
+}
+
+@keyframes fadePage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* NAVBAR */
+header {
+  padding: 30px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: var(--dark);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/*SECTIONS */
+section {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* ABOUT PAGE */
+
+.about-section{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* TITLE HOVER */
+
+.section-title{
+  font-family: 'Playfair Display', serif;
+  font-size:42px;
+  margin-top:40px;
+  position:relative;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.section-title::after{
+  content:"";
+  width:0%;
+  height:3px;
+  background:var(--gold);
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  transition:0.4s;
+}
+
+.section-title:hover::after{
+  width:100%;
+}
+
+/* EDUCATION LAYOUT */
+
+.education-container{
+  margin-top:40px;
+  display:flex;
+  flex-direction:column;
+  gap:50px;
+}
+
+.school h3{
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+.school p{
+  margin-bottom:15px;
+  color:var(--sage);
+}
+
+/* SCHOOL IMAGE GALLERY */
+
+.school-gallery{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  padding-bottom:10px;
+}
+
+/* INSTAGRAM STYLE HOVER */
+
+.school-gallery img{
+  width:220px;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.4s;
+  cursor:pointer;
+}
+
+.school-gallery img:hover{
+  transform:scale(1.08);
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/*  HERO  */
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h2 {
+  font-size: 60px;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.hero-image img{
+  width: 300px;
+}
+
+/*  BUTTON  */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  border-radius: 30px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/*  GRID  */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-8px)scale(1.03);
+  background: var(--green);
+  color: white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/*  CONTACT  */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--sage);
+  font-family: inherit;
+}
+
+button {
+  padding: 14px;
+  border-radius: 30px;
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.project-section img{
+  width:100%;
+  border-radius:12px;
+  transition:0.4s;
+  }
+  
+  .project-section img:hover{
+  transform:scale(1.05);
+  }
+
+/*  FOOTER    */
+footer {
+  margin-top: auto;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/*  ANIMATIONS  */
+.reveal {
+  color:#14382b;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.9s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal:hover{
+  background: #14382b;
+  color: white;
+
+}
+
+
+
+
+/* DARK MODE  */
+
+body.dark {
+  background: #0b1f18;
+  color: #f4f4f2;
+}
+
+body.dark header {
+  background: transparent;
+}
+
+body.dark nav a {
+  color: #f4f4f2;
+}
+
+body.dark .card {
+  background: #14382b;
+  color: white;
+}
+
+body.dark footer {
+  background: #061510;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #14382b;
+  color: white;
+  border-color: #53917a;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 20px;
+  margin-left: 25px;
+  color: var(--dark);
+}
+
+body.dark .toggle-btn {
+  color: #f4f4f2;
+}
+
+.reveal:hover{
+  background: #14382b;
+  color: white;
+}
+
+body.dark .card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: #1f5c45;
+  color: white;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+}
